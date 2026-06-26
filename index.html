@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#2C4A2E" />
+<title>Etienne — Plaquiste · Peintre · Isolation · Aubenas, Ardèche (07)</title>
+<meta name="description" content="Etienne, plaquiste-peintre en Ardèche. Plaquisterie, peinture intérieure et isolation thermique à Aubenas et dans tout le Sud-Ardèche. Neuf, rénovation, maisons de caractère. Devis gratuit — 06 34 84 37 28." />
+<meta name="author" content="Etienne Plaquiste Peintre" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Etienne — Plaquiste · Peintre · Isolation · Ardèche (07)" />
+<meta property="og:description" content="Plaquisterie, peinture et isolation thermique à Aubenas et dans tout le Sud-Ardèche. Le travail bien fait, en Ardèche." />
+<meta property="og:locale" content="fr_FR" />
+
+<style>
+/* =====================================================================
+   IMPORT TYPOGRAPHIE — Google Fonts (seule dépendance externe autorisée)
+   ===================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;500;700&display=swap');
+
+/* =====================================================================
+   TOKENS — toutes les couleurs et constantes en variables CSS
+   ===================================================================== */
+:root {
+  /* Palette territoriale ardéchoise (6 tokens) */
+  --foret:   #2C4A2E; /* accent signature — vert forêt profond        */
+  --pierre:  #F4EFE6; /* fond principal — beige pierre calcaire        */
+  --basalte: #1C1C1C; /* texte principal — noir basalte volcanique     */
+  --schiste: #EAE3D8; /* sections alternées — schiste clair            */
+  --mousse:  #8FA882; /* accent doux — vert mousse                     */
+  --silex:   #7A7266; /* texte secondaire — silex gris chaud           */
+
+  /* Typographies */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Dimensions de structure */
+  --bandeau-h: 36px;
+  --header-h: 74px;
+  --maxw: 1200px;
+  --radius-s: 4px;
+  --radius-m: 6px;
+
+  /* Transitions */
+  --t-fast: 0.2s ease;
+  --t-reveal: 0.55s ease-out;
+}
+
+/* =====================================================================
+   RESET & BASE
+   ===================================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  /* L'ancre s'arrête sous le bandeau + header fixes */
+  scroll-padding-top: calc(var(--bandeau-h) + var(--header-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--basalte);
+  background: var(--pierre);
+  line-height: 1.6;
+  /* Compense le bandeau fixe en haut */
+  padding-top: calc(var(--bandeau-h) + var(--header-h));
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* =====================================================================
+   UTILITAIRES
+   ===================================================================== */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section { padding-block: 88px; position: relative; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--foret);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.h-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--basalte);
+  line-height: 1.1;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  letter-spacing: -0.01em;
+}
+
+.h-title em { font-style: italic; color: var(--foret); }
+
+.lead {
+  color: var(--silex);
+  font-size: 1.05rem;
+  max-width: 560px;
+}
+
+/* Texture bois de châtaignier (SVG en data-URI), pilotée par pseudo-élément.
+   La subtilité globale est gérée via l'opacité du pseudo-élément.            */
+.wood { position: relative; isolation: isolate; }
+.wood::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80' viewBox='0 0 200 80'%3E%3Cg fill='none' stroke='%232C4A2E' stroke-width='0.6'%3E%3Cpath d='M0,4 C50,1 100,7 150,3 S200,5 200,4'/%3E%3Cpath d='M0,12 C45,9 95,15 150,11 S200,13 200,12'/%3E%3Cpath d='M0,20 C50,18 100,23 150,19 S200,21 200,20'/%3E%3Cpath d='M0,28 C40,25 90,31 140,27 S200,29 200,28'/%3E%3Cpath d='M0,36 C55,33 105,39 155,35 S200,37 200,36'/%3E%3Cpath d='M0,44 C45,41 100,47 150,43 S200,45 200,44'/%3E%3Cpath d='M0,52 C50,49 100,55 150,51 S200,53 200,52'/%3E%3Cpath d='M0,60 C40,57 95,63 145,59 S200,61 200,60'/%3E%3Cpath d='M0,68 C55,65 105,71 155,67 S200,69 200,68'/%3E%3Cpath d='M0,76 C45,73 100,79 150,75 S200,77 200,76'/%3E%3Cpath d='M70,12 C78,16 82,24 88,28'/%3E%3Cpath d='M120,44 C128,48 132,56 138,60'/%3E%3Cpath d='M30,52 C36,48 40,40 46,36'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200px 80px;
+  background-repeat: repeat;
+  opacity: 0.06; /* texture visible sur sections --schiste (stroke ~0.04 perçu) */
+}
+
+/* =====================================================================
+   0. BANDEAU FIXE
+   ===================================================================== */
+.bandeau {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--bandeau-h);
+  background: var(--foret);
+  color: var(--pierre);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding-inline: 16px;
+  text-align: center;
+}
+.bandeau a { color: var(--pierre); }
+.bandeau .b-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* =====================================================================
+   1. HEADER FIXE
+   ===================================================================== */
+.header {
+  position: fixed;
+  top: var(--bandeau-h); left: 0; right: 0;
+  height: var(--header-h);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background var(--t-fast), box-shadow var(--t-fast), backdrop-filter var(--t-fast);
+}
+.header.scrolled {
+  background: rgba(244, 239, 230, 0.97);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(28, 28, 28, 0.06);
+}
+.header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo texte */
+.logo { display: flex; align-items: baseline; gap: 8px; line-height: 1; }
+.logo .logo-ep {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--foret);
+  font-size: 22px;
+}
+.logo .logo-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--basalte);
+  font-size: 18px;
+}
+.logo .logo-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--silex);
+  font-size: 12px;
+}
+
+/* Navigation desktop */
+.nav { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 26px; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--silex);
+  transition: color var(--t-fast);
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--foret); }
+
+/* CTA header */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: var(--radius-s);
+  transition: transform var(--t-fast), background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  cursor: pointer;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--foret);
+  color: var(--pierre);
+  padding: 12px 22px;
+}
+.btn-primary:hover { background: #233c25; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--basalte);
+  border: 1.5px solid var(--basalte);
+  padding: 12px 26px;
+}
+.btn-outline:hover { background: var(--basalte); color: var(--pierre); }
+
+.header .btn-primary { font-size: 13px; padding: 10px 18px; }
+
+/* Hamburger mobile */
+.burger {
+  display: none;
+  width: 40px; height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px;
+}
+.burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--basalte);
+  border-radius: 2px;
+  transition: transform var(--t-fast), opacity var(--t-fast);
+}
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Overlay mobile fullscreen */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: var(--pierre);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav a {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--basalte);
+}
+.mobile-nav a:hover { color: var(--foret); }
+.mobile-nav .btn-primary { font-size: 16px; padding: 14px 28px; margin-top: 8px; }
+
+/* =====================================================================
+   2. HERO
+   ===================================================================== */
+.hero {
+  background: var(--pierre);
+  position: relative;
+  overflow: hidden;
+  padding-block: 84px 96px;
+}
+/* Texture bois très subtile (opacity 0.03) sur le hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80' viewBox='0 0 200 80'%3E%3Cg fill='none' stroke='%232C4A2E' stroke-width='0.6'%3E%3Cpath d='M0,4 C50,1 100,7 150,3 S200,5 200,4'/%3E%3Cpath d='M0,12 C45,9 95,15 150,11 S200,13 200,12'/%3E%3Cpath d='M0,20 C50,18 100,23 150,19 S200,21 200,20'/%3E%3Cpath d='M0,28 C40,25 90,31 140,27 S200,29 200,28'/%3E%3Cpath d='M0,36 C55,33 105,39 155,35 S200,37 200,36'/%3E%3Cpath d='M0,44 C45,41 100,47 150,43 S200,45 200,44'/%3E%3Cpath d='M0,52 C50,49 100,55 150,51 S200,53 200,52'/%3E%3Cpath d='M0,60 C40,57 95,63 145,59 S200,61 200,60'/%3E%3Cpath d='M0,68 C55,65 105,71 155,67 S200,69 200,68'/%3E%3Cpath d='M0,76 C45,73 100,79 150,75 S200,77 200,76'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200px 80px;
+  background-repeat: repeat;
+  opacity: 0.03;
+}
+.hero .wrap { position: relative; z-index: 1; }
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--foret);
+  margin-bottom: 22px;
+  display: block;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--basalte);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+  margin-bottom: 24px;
+}
+.hero h1 em { font-style: italic; color: var(--foret); }
+.hero-sub {
+  font-family: var(--font-body);
+  color: var(--silex);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.hero-ctas .btn-primary { padding: 14px 32px; font-size: 15px; }
+.hero-ctas .btn-outline { padding: 14px 32px; font-size: 15px; }
+
+.hero-badges { display: flex; flex-wrap: wrap; gap: 12px; }
+.badge {
+  background: var(--schiste);
+  border-radius: var(--radius-s);
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--basalte);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* =====================================================================
+   3. SECTION MÉTIERS
+   ===================================================================== */
+.metiers { background: var(--schiste); }
+.metiers-head { max-width: 640px; margin-bottom: 48px; }
+.metiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.metier-card {
+  background: var(--pierre);
+  border-radius: var(--radius-m);
+  border-top: 3px solid var(--foret);
+  padding: 30px 26px;
+}
+.metier-card .m-icon { font-size: 1.8rem; display: block; margin-bottom: 14px; }
+.metier-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--basalte);
+  margin-bottom: 12px;
+}
+.metier-card p { color: var(--silex); font-size: 0.98rem; }
+
+/* =====================================================================
+   4. SECTION ISOLATION
+   ===================================================================== */
+.isolation { background: var(--foret); color: var(--pierre); }
+.isolation .eyebrow { color: rgba(244, 239, 230, 0.5); }
+.isolation .iso-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pierre);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  max-width: 640px;
+}
+.isolation .iso-text {
+  color: var(--mousse);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 44px;
+  font-size: 1.05rem;
+}
+.iso-args {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 36px;
+}
+.iso-arg .ia-icon { font-size: 1.6rem; display: block; margin-bottom: 12px; }
+.iso-arg h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--pierre);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+.iso-arg p { color: var(--mousse); font-size: 0.96rem; }
+.iso-note {
+  font-style: italic;
+  color: var(--mousse);
+  font-size: 13px;
+  border-top: 1px solid rgba(143, 168, 130, 0.25);
+  padding-top: 22px;
+  max-width: 640px;
+}
+
+/* =====================================================================
+   5. SECTION RÉALISATIONS
+   ===================================================================== */
+.realisations { background: var(--pierre); }
+.realisations-head { margin-bottom: 40px; }
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 6px;
+}
+.gallery-item {
+  position: relative;
+  background: var(--schiste);
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.gallery-item:first-child { grid-row: 1 / 3; }
+
+/* Visuel placeholder : motif sobre + emoji discret */
+.gallery-item .ph-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  opacity: 0.28;
+}
+.gallery-item .g-caption {
+  position: relative;
+  z-index: 2;
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--silex);
+  background: linear-gradient(to top, rgba(234, 227, 216, 0.92), rgba(234, 227, 216, 0));
+  width: 100%;
+}
+/* Overlay au survol */
+.gallery-item .g-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(28, 28, 28, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+.gallery-item .g-overlay span {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--pierre);
+  font-size: 1.15rem;
+}
+.gallery-item:hover .g-overlay,
+.gallery-item:focus-within .g-overlay { opacity: 1; }
+
+.gallery-cta {
+  margin-top: 32px;
+  font-weight: 700;
+  color: var(--foret);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.gallery-cta:hover { text-decoration: underline; }
+
+/* =====================================================================
+   6. SECTION PROCESSUS
+   ===================================================================== */
+.processus { background: var(--schiste); }
+.processus-head { margin-bottom: 48px; }
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.step .s-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--mousse);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--basalte);
+  margin-bottom: 10px;
+}
+.step p { color: var(--silex); font-size: 0.98rem; }
+
+/* =====================================================================
+   7. SECTION TÉMOIGNAGES
+   ===================================================================== */
+.temoignages { background: var(--pierre); }
+.temoignages-head { margin-bottom: 44px; }
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.testimonial {
+  background: var(--schiste);
+  border-radius: var(--radius-m);
+  border-left: 3px solid var(--foret);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial p {
+  font-size: 0.98rem;
+  color: var(--basalte);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+.testimonial .t-author {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--silex);
+}
+.testimonial .t-stars { color: var(--foret); letter-spacing: 2px; font-size: 0.9rem; }
+
+/* =====================================================================
+   8. SECTION CONTACT
+   ===================================================================== */
+.contact { background: var(--basalte); color: var(--pierre); }
+.contact .eyebrow { color: var(--foret); }
+.contact .c-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--pierre);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  margin-bottom: 12px;
+}
+.contact .c-sub { color: var(--silex); margin-bottom: 44px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Bloc gauche */
+.contact-left {
+  background: rgba(44, 74, 46, 0.1);
+  border: 1px solid rgba(44, 74, 46, 0.3);
+  border-radius: var(--radius-m);
+  padding: 28px;
+}
+.contact-left .btn-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--foret);
+  color: var(--pierre);
+  border-radius: var(--radius-s);
+  padding: 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: background var(--t-fast);
+  margin-bottom: 22px;
+}
+.contact-left .btn-phone:hover { background: #233c25; }
+.contact-left .c-loc {
+  color: var(--mousse);
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-left .c-hours {
+  margin-top: 16px;
+  color: var(--silex);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Formulaire */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { margin-bottom: 20px; }
+.field label {
+  display: block;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mousse);
+  margin-bottom: 8px;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--pierre);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.2);
+  padding: 12px 0;
+  transition: border-color var(--t-fast);
+}
+.field textarea { resize: vertical; min-height: 90px; }
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(244, 239, 230, 0.4); }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-bottom-color: var(--foret);
+}
+.field select { cursor: pointer; }
+/* Les options héritent d'un fond clair lisible (rendu natif système) */
+.field select option { color: var(--basalte); background: var(--pierre); }
+
+.form button[type="submit"] {
+  width: 100%;
+  background: var(--foret);
+  color: var(--pierre);
+  border-radius: var(--radius-s);
+  padding: 16px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background var(--t-fast);
+  margin-top: 8px;
+}
+.form button[type="submit"]:hover { background: #233c25; }
+.form-status {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--mousse);
+  min-height: 1em;
+}
+
+/* =====================================================================
+   9. FOOTER
+   ===================================================================== */
+.footer {
+  background: var(--schiste);
+  border-top: 2px solid var(--foret);
+  padding-block: 48px 28px;
+}
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+.footer .f-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--basalte);
+  font-size: 22px;
+}
+.footer .f-tag { color: var(--silex); font-size: 0.95rem; margin-top: 4px; }
+.footer .f-col { font-size: 0.95rem; color: var(--silex); line-height: 1.9; }
+.footer .f-col a { color: var(--silex); }
+.footer .f-col a:hover { color: var(--foret); }
+.footer .f-phone { color: var(--foret); font-weight: 700; font-size: 1.05rem; }
+.footer-bottom {
+  border-top: 1px solid rgba(122, 114, 102, 0.25);
+  padding-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--silex);
+}
+
+/* =====================================================================
+   SCROLL REVEAL
+   ===================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--t-reveal), transform var(--t-reveal);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 18px; }
+}
+
+@media (max-width: 900px) {
+  .nav-links, .nav .btn-primary { display: none; }
+  .burger { display: flex; }
+}
+
+@media (max-width: 768px) {
+  .section { padding-block: 64px; }
+  .metiers-grid,
+  .iso-args,
+  .steps,
+  .temoignages-grid { grid-template-columns: 1fr; }
+
+  /* Galerie : 2 colonnes égales sur mobile */
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item { min-height: 170px; }
+  .gallery-item:first-child { grid-row: auto; grid-column: 1 / 3; }
+
+  .logo .logo-sub { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .wrap { padding-inline: 18px; }
+  .bandeau { font-size: 11px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { width: 100%; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery-item:first-child { grid-column: auto; }
+}
+
+/* =====================================================================
+   ACCESSIBILITÉ — mouvement réduit
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Focus visible pour navigation clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--foret);
+  outline-offset: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================ 0. BANDEAU ============================ -->
+<div class="bandeau" role="region" aria-label="Coordonnées rapides">
+  <span class="b-txt">🏗️ Etienne · Plaquiste-Peintre · Isolation · Aubenas - Ardèche (07) ·
+    <a href="tel:0634843728" aria-label="Appeler le 06 34 84 37 28">06&nbsp;34&nbsp;84&nbsp;37&nbsp;28</a>
+  </span>
+</div>
+
+<!-- ============================ 1. HEADER ============================ -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a href="#hero" class="logo" aria-label="Etienne Plaquiste Peintre — accueil">
+      <span class="logo-ep">EP</span>
+      <span class="logo-name">Etienne</span>
+      <span class="logo-sub">Plaquiste&nbsp;·&nbsp;Peintre</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <div class="nav-links">
+        <a href="#metiers">Métiers</a>
+        <a href="#isolation">Isolation</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="tel:0634843728" class="btn btn-primary" aria-label="Appeler le 06 34 84 37 28">📞 06 34 84 37 28</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay navigation mobile -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <a href="#metiers" data-mobile-link>Métiers</a>
+  <a href="#isolation" data-mobile-link>Isolation</a>
+  <a href="#realisations" data-mobile-link>Réalisations</a>
+  <a href="#contact" data-mobile-link>Contact</a>
+  <a href="tel:0634843728" class="btn btn-primary" aria-label="Appeler le 06 34 84 37 28">📞 06 34 84 37 28</a>
+</div>
+
+<main>
+
+<!-- ============================ 2. HERO ============================ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow reveal">Plaquiste · Peintre · Isolation · Ardèche (07)</span>
+    <h1 class="reveal">Le travail bien fait,<br><em>en Ardèche.</em></h1>
+    <p class="hero-sub reveal">Plaquisterie, peinture et isolation thermique à Aubenas et dans
+      tout le Sud-Ardèche. Neuf, rénovation, maisons de caractère.</p>
+
+    <div class="hero-ctas reveal">
+      <a href="tel:0634843728" class="btn btn-primary" aria-label="Appeler le 06 34 84 37 28">📞 06 34 84 37 28</a>
+      <a href="#contact" class="btn btn-outline" aria-label="Aller au formulaire de demande de devis">Demander un devis</a>
+    </div>
+
+    <div class="hero-badges reveal">
+      <span class="badge">🏗️ Neuf &amp; Rénovation</span>
+      <span class="badge">🌿 Isolation thermique</span>
+      <span class="badge">📍 Aubenas - Ardèche</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. MÉTIERS ============================ -->
+<section class="section metiers wood" id="metiers">
+  <div class="wrap">
+    <div class="metiers-head">
+      <span class="eyebrow reveal">Mes métiers</span>
+      <h2 class="h-title reveal">Trois savoir-faire, un seul artisan.</h2>
+    </div>
+
+    <div class="metiers-grid">
+      <article class="metier-card reveal">
+        <span class="m-icon" aria-hidden="true">🏗️</span>
+        <h3>Plaquisterie</h3>
+        <p>Cloisons, doublage, plafonds suspendus. Du tracé précis à la finition soignée,
+          pour neuf comme pour rénovation.</p>
+      </article>
+
+      <article class="metier-card reveal">
+        <span class="m-icon" aria-hidden="true">🎨</span>
+        <h3>Peinture</h3>
+        <p>Intérieure, décorative, tous supports. Préparation des murs, finitions nettes,
+          résultat durable.</p>
+      </article>
+
+      <article class="metier-card reveal">
+        <span class="m-icon" aria-hidden="true">🌿</span>
+        <h3>Isolation</h3>
+        <p>Doublage thermique par l'intérieur. Amélioration du confort et réduction
+          des factures d'énergie.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. ISOLATION ============================ -->
+<section class="section isolation" id="isolation">
+  <div class="wrap">
+    <span class="eyebrow reveal">Isolation thermique</span>
+    <h2 class="iso-title reveal">Moins de froid. Moins de factures.</h2>
+    <p class="iso-text reveal">Le doublage isolant par l'intérieur est l'une des rénovations
+      les plus efficaces sur les maisons en pierre et les bâtiments anciens d'Ardèche.
+      En améliorant l'isolation de vos murs, vous gagnez en confort thermique hiver comme
+      été — et réduisez vos dépenses d'énergie durablement.</p>
+
+    <div class="iso-args">
+      <div class="iso-arg reveal">
+        <span class="ia-icon" aria-hidden="true">🌡️</span>
+        <h4>Confort</h4>
+        <p>Plus chaud en hiver, plus frais en été.</p>
+      </div>
+      <div class="iso-arg reveal">
+        <span class="ia-icon" aria-hidden="true">💶</span>
+        <h4>Économies</h4>
+        <p>Réduction des factures de chauffage.</p>
+      </div>
+      <div class="iso-arg reveal">
+        <span class="ia-icon" aria-hidden="true">🏠</span>
+        <h4>Valorisation</h4>
+        <p>Meilleur DPE, bien mieux valorisé.</p>
+      </div>
+    </div>
+
+    <p class="iso-note reveal">Les travaux d'isolation peuvent bénéficier d'aides financières
+      (MaPrimeRénov, CEE). Contactez-moi pour en savoir plus.</p>
+  </div>
+</section>
+
+<!-- ============================ 5. RÉALISATIONS ============================ -->
+<section class="section realisations" id="realisations">
+  <div class="wrap">
+    <div class="realisations-head">
+      <span class="eyebrow reveal">Réalisations</span>
+      <h2 class="h-title reveal"><em>Quelques chantiers en Ardèche.</em></h2>
+    </div>
+
+    <div class="gallery reveal">
+      <figure class="gallery-item">
+        <span class="ph-icon" aria-hidden="true">🪟</span>
+        <figcaption class="g-caption">Bureau — plaquisterie et finitions</figcaption>
+        <div class="g-overlay"><span>Bureau — plaquisterie et finitions</span></div>
+      </figure>
+      <figure class="gallery-item">
+        <span class="ph-icon" aria-hidden="true">🎨</span>
+        <figcaption class="g-caption">Chambre — peinture accent bordeaux</figcaption>
+        <div class="g-overlay"><span>Chambre — peinture accent bordeaux</span></div>
+      </figure>
+      <figure class="gallery-item">
+        <span class="ph-icon" aria-hidden="true">🌿</span>
+        <figcaption class="g-caption">Doublage isolant — isolation thermique</figcaption>
+        <div class="g-overlay"><span>Doublage isolant — isolation thermique</span></div>
+      </figure>
+      <figure class="gallery-item">
+        <span class="ph-icon" aria-hidden="true">🏗️</span>
+        <figcaption class="g-caption">Plafond suspendu — réalisation neuf</figcaption>
+        <div class="g-overlay"><span>Plafond suspendu — réalisation neuf</span></div>
+      </figure>
+      <figure class="gallery-item">
+        <span class="ph-icon" aria-hidden="true">🧱</span>
+        <figcaption class="g-caption">Pièce — enduit et ratissage</figcaption>
+        <div class="g-overlay"><span>Pièce — enduit et ratissage</span></div>
+      </figure>
+    </div>
+
+    <a class="gallery-cta reveal" href="https://www.instagram.com/etienneplaquistepeintre"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Voir les chantiers sur Instagram, compte etienneplaquistepeintre">
+      Voir les chantiers sur Instagram @etienneplaquistepeintre →
+    </a>
+  </div>
+</section>
+
+<!-- ============================ 6. PROCESSUS ============================ -->
+<section class="section processus wood" id="processus">
+  <div class="wrap">
+    <div class="processus-head">
+      <h2 class="h-title reveal">Comment on travaille.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="s-num">1</div>
+        <h3>Un appel suffit</h3>
+        <p>Décrivez votre projet au 06 34 84 37 28. On convient d'une visite selon
+          vos disponibilités.</p>
+      </div>
+      <div class="step reveal">
+        <div class="s-num">2</div>
+        <h3>Visite et devis</h3>
+        <p>Déplacement sur place à Aubenas ou dans le Sud-Ardèche. Devis détaillé
+          gratuit, sans engagement.</p>
+      </div>
+      <div class="step reveal">
+        <div class="s-num">3</div>
+        <h3>Le chantier</h3>
+        <p>Travail soigné, site protégé, finitions nettes. Du placo à la dernière
+          couche de peinture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 7. TÉMOIGNAGES ============================ -->
+<section class="section temoignages" id="temoignages">
+  <div class="wrap">
+    <div class="temoignages-head">
+      <h2 class="h-title reveal">Ce qu'ils en disent.</h2>
+    </div>
+
+    <div class="temoignages-grid">
+      <figure class="testimonial reveal">
+        <p>« Doublage isolant posé dans toute la maison, ancienne bâtisse en pierre.
+          Le confort l'hiver est incomparable. Travail soigné et équipe sérieuse. »</p>
+        <figcaption>
+          <span class="t-author">Martine B., Saint-Étienne-de-Fontbellon</span><br>
+          <span class="t-stars" aria-label="Note de 5 sur 5">★★★★★</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial reveal">
+        <p>« Plaquisterie et peinture pour notre rénovation complète près d'Aubenas.
+          Propre, ponctuel, à l'écoute. On est ravis du résultat. »</p>
+        <figcaption>
+          <span class="t-author">Pascal et Anne R., Vals-les-Bains</span><br>
+          <span class="t-stars" aria-label="Note de 5 sur 5">★★★★★</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial reveal">
+        <p>« Plafond suspendu et peinture dans notre maison neuve. Excellent travail,
+          finitions impeccables. Je recommande sans hésiter. »</p>
+        <figcaption>
+          <span class="t-author">Laurent C., Prades (07)</span><br>
+          <span class="t-stars" aria-label="Note de 5 sur 5">★★★★★</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 8. CONTACT ============================ -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">Contact &amp; devis</span>
+    <h2 class="c-title reveal">Parlons de votre projet.</h2>
+    <p class="c-sub reveal">Devis gratuit · Aubenas &amp; Sud-Ardèche (07)</p>
+
+    <div class="contact-grid">
+      <!-- Bloc gauche -->
+      <div class="contact-left reveal">
+        <a href="tel:0634843728" class="btn-phone" aria-label="Appeler le 06 34 84 37 28">📞 06 34 84 37 28</a>
+        <p class="c-loc">📍 Prades · Aubenas · Sud-Ardèche (07)</p>
+        <p class="c-hours">Interventions en neuf et rénovation.<br>
+          Réponse rapide à vos demandes de devis.</p>
+      </div>
+
+      <!-- Formulaire -->
+      <form class="form reveal" id="devisForm" action="#" method="post" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Prénom &amp; Nom</label>
+            <input type="text" id="f-name" name="nom" autocomplete="name" required
+                   aria-label="Votre prénom et nom" />
+          </div>
+          <div class="field">
+            <label for="f-tel">Téléphone</label>
+            <input type="tel" id="f-tel" name="telephone" autocomplete="tel" required
+                   aria-label="Votre numéro de téléphone" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email"
+                 aria-label="Votre adresse email" />
+        </div>
+
+        <div class="field">
+          <label for="f-type">Type de travaux</label>
+          <select id="f-type" name="type" aria-label="Type de travaux souhaités">
+            <option value="">Sélectionnez…</option>
+            <option>Plaquisterie</option>
+            <option>Peinture intérieure</option>
+            <option>Isolation thermique</option>
+            <option>Neuf (construction)</option>
+            <option>Rénovation complète</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Description</label>
+          <textarea id="f-msg" name="message" rows="3"
+                    placeholder="Décrivez votre projet — type de pièce, surface, état actuel…"
+                    aria-label="Description de votre projet"></textarea>
+        </div>
+
+        <button type="submit" aria-label="Envoyer ma demande de devis">Envoyer ma demande</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ 9. FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="f-name">Etienne</div>
+        <div class="f-tag">Plaquiste · Peintre · Isolation</div>
+      </div>
+
+      <div class="f-col">
+        <a href="tel:0634843728" class="f-phone" aria-label="Appeler le 06 34 84 37 28">06 34 84 37 28</a><br>
+        Prades · Aubenas · Ardèche (07)
+      </div>
+
+      <div class="f-col">
+        <a href="https://www.instagram.com/etienneplaquistepeintre" target="_blank"
+           rel="noopener noreferrer" aria-label="Instagram etienneplaquistepeintre">
+          @etienneplaquistepeintre
+        </a><br>
+        Neuf · Rénovation · Maisons de caractère
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Etienne Plaquiste Peintre — Tous droits réservés</span>
+      <span>Site réalisé par Payment Flow</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+document.addEventListener("DOMContentLoaded", function () {
+  /* ---------------------------------------------------------------
+     1. HEADER — fond opaque + blur au scroll > 70px
+     --------------------------------------------------------------- */
+  var header = document.getElementById("header");
+  function onScrollHeader() {
+    if (window.scrollY > 70) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+  window.addEventListener("scroll", onScrollHeader, { passive: true });
+  onScrollHeader();
+
+  /* ---------------------------------------------------------------
+     2. HAMBURGER — overlay mobile fullscreen
+     --------------------------------------------------------------- */
+  var burger = document.getElementById("burger");
+  var mobileNav = document.getElementById("mobileNav");
+
+  function closeMenu() {
+    burger.classList.remove("open");
+    mobileNav.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "true");
+    burger.setAttribute("aria-label", "Ouvrir le menu");
+    document.body.style.overflow = "";
+  }
+  function openMenu() {
+    burger.classList.add("open");
+    mobileNav.classList.add("open");
+    burger.setAttribute("aria-expanded", "true");
+    mobileNav.setAttribute("aria-hidden", "false");
+    burger.setAttribute("aria-label", "Fermer le menu");
+    document.body.style.overflow = "hidden";
+  }
+  burger.addEventListener("click", function () {
+    if (mobileNav.classList.contains("open")) { closeMenu(); } else { openMenu(); }
+  });
+  // Fermeture au clic sur un lien du menu mobile
+  document.querySelectorAll("[data-mobile-link]").forEach(function (link) {
+    link.addEventListener("click", closeMenu);
+  });
+  // Fermeture à la touche Échap
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && mobileNav.classList.contains("open")) { closeMenu(); }
+  });
+
+  /* ---------------------------------------------------------------
+     3. SCROLL REVEAL — IntersectionObserver + stagger 0.08s
+        (désactivé si l'utilisateur préfère un mouvement réduit)
+     --------------------------------------------------------------- */
+  var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveals = document.querySelectorAll(".reveal");
+
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("revealed"); });
+  } else {
+    // Délai progressif calculé par groupe (parent commun)
+    var counters = new Map();
+    reveals.forEach(function (el) {
+      var parent = el.parentElement;
+      var i = counters.get(parent) || 0;
+      el.style.transitionDelay = (i * 0.08) + "s";
+      counters.set(parent, i + 1);
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    reveals.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ---------------------------------------------------------------
+     4. SCROLLSPY — lien de navigation actif
+     --------------------------------------------------------------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
+  var sections = navLinks
+    .map(function (link) {
+      var id = link.getAttribute("href").slice(1);
+      return document.getElementById(id);
+    })
+    .filter(Boolean);
+
+  function onScrollSpy() {
+    var offset = window.scrollY + window.innerHeight * 0.32;
+    var currentId = null;
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= offset) { currentId = sec.id; }
+    });
+    navLinks.forEach(function (link) {
+      var match = link.getAttribute("href").slice(1) === currentId;
+      link.classList.toggle("active", match);
+    });
+  }
+  window.addEventListener("scroll", onScrollSpy, { passive: true });
+  onScrollSpy();
+
+  /* ---------------------------------------------------------------
+     5. FORMULAIRE — confirmation locale (action="#" à brancher
+        sur Web3Forms ou Formspree par le client)
+     --------------------------------------------------------------- */
+  var form = document.getElementById("devisForm");
+  var status = document.getElementById("formStatus");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("f-name").value.trim();
+    var tel = document.getElementById("f-tel").value.trim();
+    if (!name || !tel) {
+      status.textContent = "Merci d'indiquer au moins votre nom et votre téléphone.";
+      return;
+    }
+    status.textContent = "Merci " + name + " ! Votre demande est prête. Branchez le formulaire (Web3Forms / Formspree) ou appelez le 06 34 84 37 28.";
+    form.reset();
+  });
+});
+</script>
+
+</body>
+</html>
